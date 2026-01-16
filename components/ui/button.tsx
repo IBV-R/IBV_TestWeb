@@ -6,11 +6,11 @@ import { cn } from "@/lib/cn";
 
 const variants = {
   primary:
-    "bg-accent text-accent-foreground hover:bg-accent/90 focus-visible:outline-accent",
+    "bg-accent text-accent-foreground shadow-sm shadow-accent/20 hover:bg-accent/90 hover:shadow-md hover:shadow-accent/20 focus-visible:outline-accent",
   secondary:
-    "bg-surface text-foreground hover:bg-surface/70 focus-visible:outline-foreground",
+    "border border-border bg-background/70 text-foreground shadow-sm hover:border-accent/30 hover:bg-surface focus-visible:outline-accent",
   ghost:
-    "bg-transparent text-foreground hover:bg-surface focus-visible:outline-foreground",
+    "bg-transparent text-foreground hover:bg-surface focus-visible:outline-accent",
 } as const;
 
 const sizes = {
@@ -34,7 +34,7 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-md font-medium tracking-tight transition-colors",
+        "inline-flex items-center justify-center gap-2 rounded-md font-medium tracking-tight transition-all",
         "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
         "disabled:pointer-events-none disabled:opacity-50",
         variants[variant],
@@ -59,7 +59,7 @@ export function ButtonLink({
   return (
     <Link
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-md font-medium tracking-tight transition-colors",
+        "inline-flex items-center justify-center gap-2 rounded-md font-medium tracking-tight transition-all",
         "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
         variants[variant],
         sizes[size],

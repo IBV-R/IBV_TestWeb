@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070a0f;
-  --foreground: #f3f6fb;
-  --surface: rgba(255, 255, 255, 0.04);
-  --muted: rgba(243, 246, 251, 0.72);
-  --border: rgba(243, 246, 251, 0.12);
+  --background: #ffffff;
+  --foreground: #0b1220;
+  --surface: rgba(11, 18, 32, 0.04);
+  --muted: rgba(11, 18, 32, 0.68);
+  --border: rgba(11, 18, 32, 0.12);
 
-  --accent: #22d3ee;
-  --accent-foreground: #041018;
+  --accent: #116dff;
+  --accent-foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #fbfcfe;
-    --foreground: #0b1220;
-    --surface: rgba(11, 18, 32, 0.04);
-    --muted: rgba(11, 18, 32, 0.68);
-    --border: rgba(11, 18, 32, 0.12);
+    --background: #070a0f;
+    --foreground: #f3f6fb;
+    --surface: rgba(243, 246, 251, 0.04);
+    --muted: rgba(243, 246, 251, 0.72);
+    --border: rgba(243, 246, 251, 0.12);
 
-    --accent: #0ea5e9;
-    --accent-foreground: #f8fbff;
+    --accent: #7fccf7;
+    --accent-foreground: #041018;
   }
 }
 
@@ -48,5 +48,78 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--accent) 25%, transparent);
+  background: color-mix(in oklab, var(--accent) 22%, transparent);
+}
+
+@keyframes grid-pan {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 220px 160px, 160px 220px;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        color-mix(in oklab, var(--border) 70%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--border) 70%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 72px 72px;
+    background-position: center;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--border) 70%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+    background-position: center;
+  }
+
+  .hero-glow {
+    background-image: radial-gradient(
+        900px circle at 20% 0%,
+        color-mix(in oklab, var(--accent) 22%, transparent),
+        transparent 60%
+      ),
+      radial-gradient(
+        700px circle at 95% 15%,
+        rgba(127, 204, 247, 0.22),
+        transparent 62%
+      );
+  }
+
+  .animate-grid-pan {
+    animation: grid-pan 18s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 10s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-grid-pan,
+  .animate-float {
+    animation: none !important;
+  }
 }

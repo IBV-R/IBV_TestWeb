@@ -119,8 +119,12 @@ export default function HomePage() {
       </section>
 
       <section className="py-16 sm:py-20">
-        <Container className="rounded-2xl border border-border bg-[radial-gradient(600px_circle_at_20%_0%,rgba(34,211,238,0.18),transparent_55%)] p-8 sm:p-10">
-          <div className="grid gap-8 md:grid-cols-12 md:items-center">
+        <Container className="relative overflow-hidden rounded-2xl border border-border bg-surface p-8 sm:p-10">
+          <div className="absolute inset-0 bg-dots opacity-50 [mask-image:radial-gradient(60%_60%_at_50%_0%,black,transparent)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(600px_circle_at_20%_0%,rgba(17,109,255,0.22),transparent_60%)]" />
+          <div className="pointer-events-none absolute -bottom-24 right-10 hidden h-72 w-72 rounded-full bg-accent/10 blur-3xl md:block motion-safe:animate-float" />
+
+          <div className="relative grid gap-8 md:grid-cols-12 md:items-center">
             <div className="md:col-span-8">
               <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                 Building in defence, dual-use, or deep tech?

@@ -77,13 +77,17 @@ This document converts the competitive analysis into actionable guidance for Ind
 
 ---
 
-## 5) Color palette (defence/deep-tech aesthetic)
+## 5) Color palette (aligned to current IBV brand)
 
 Recommended tokens
-- Background: near‑black / deep navy
-- Surface: translucent “glass” layer
+- Background: **white** (clean, institutional)
+- Foreground: near‑black / ink
+- Surface: subtle cool grey for cards
 - Border: low-contrast thin lines
-- Accent: cyan/blue (signals technology) — use sparingly
+- Accent: **IBV blue** (observed on the current site) — used for CTAs and highlights
+
+Optional
+- Dark mode using the same accent family (for a modern “developer” feel)
 
 The codebase implements this with CSS variables in `app/globals.css`:
 - `--background`, `--surface`, `--border`, `--accent`
