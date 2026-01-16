@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Container } from "@/components/container";
 import { Hero } from "@/components/hero";
+import { LogosMarquee } from "@/components/logos-marquee";
 import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
@@ -23,6 +24,8 @@ export default function HomePage() {
         primaryCta={{ href: "/contact", label: "Speak with us" }}
         secondaryCta={{ href: "/thesis", label: "Explore our thesis" }}
       />
+
+      <LogosMarquee />
 
       <section className="border-b border-border py-16 sm:py-20">
         <Container>

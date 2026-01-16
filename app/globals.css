@@ -1,26 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0b1220;
-  --surface: rgba(11, 18, 32, 0.04);
-  --muted: rgba(11, 18, 32, 0.68);
-  --border: rgba(11, 18, 32, 0.12);
+  color-scheme: dark;
 
+  --background: #010613;
+  --foreground: #f3f6fb;
+  --surface: rgba(243, 246, 251, 0.04);
+  --muted: rgba(243, 246, 251, 0.72);
+  --border: rgba(243, 246, 251, 0.12);
+
+  /* IBV brand blues */
   --accent: #116dff;
   --accent-foreground: #ffffff;
+  --accent-2: #7fccf7;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #070a0f;
-    --foreground: #f3f6fb;
-    --surface: rgba(243, 246, 251, 0.04);
-    --muted: rgba(243, 246, 251, 0.72);
-    --border: rgba(243, 246, 251, 0.12);
+    color-scheme: light;
 
-    --accent: #7fccf7;
-    --accent-foreground: #041018;
+    --background: #ffffff;
+    --foreground: #0b1220;
+    --surface: rgba(11, 18, 32, 0.04);
+    --muted: rgba(11, 18, 32, 0.68);
+    --border: rgba(11, 18, 32, 0.12);
+
+    --accent: #116dff;
+    --accent-foreground: #ffffff;
+    --accent-2: #0b4fd9;
   }
 }
 
@@ -32,6 +39,7 @@
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent2: var(--accent-2);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -70,6 +78,15 @@ body {
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @layer utilities {
   .bg-grid {
     background-image: linear-gradient(
@@ -103,7 +120,7 @@ body {
       ),
       radial-gradient(
         700px circle at 95% 15%,
-        rgba(127, 204, 247, 0.22),
+        color-mix(in oklab, var(--accent-2) 18%, transparent),
         transparent 62%
       );
   }
@@ -115,11 +132,16 @@ body {
   .animate-float {
     animation: float 10s ease-in-out infinite;
   }
+
+  .animate-marquee {
+    animation: marquee 22s linear infinite;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-grid-pan,
-  .animate-float {
+  .animate-float,
+  .animate-marquee {
     animation: none !important;
   }
 }

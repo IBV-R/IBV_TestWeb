@@ -25,7 +25,7 @@ export function Hero({
             <div className="inline-flex items-center rounded-full border border-border bg-background/70 px-3 py-1 text-xs font-medium tracking-tight text-foreground/90 backdrop-blur">
               Defence • Dual-use • Deep Tech
             </div>
-            <h1 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            <h1 className="mt-6 text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
               {title}
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg">

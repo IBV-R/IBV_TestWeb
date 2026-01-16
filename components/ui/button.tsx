@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 
 const variants = {
   primary:
-    "bg-accent text-accent-foreground shadow-sm shadow-accent/20 hover:bg-accent/90 hover:shadow-md hover:shadow-accent/20 focus-visible:outline-accent",
+    "bg-gradient-to-r from-accent to-accent2 text-accent-foreground shadow-sm shadow-accent/20 hover:from-accent/90 hover:to-accent2/90 hover:shadow-md hover:shadow-accent/20 focus-visible:outline-accent",
   secondary:
     "border border-border bg-background/70 text-foreground shadow-sm hover:border-accent/30 hover:bg-surface focus-visible:outline-accent",
   ghost:

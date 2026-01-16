@@ -6,8 +6,9 @@ import { Container } from "./container";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-background">
-      <Container className="grid gap-10 py-14 md:grid-cols-12">
+    <footer className="relative overflow-hidden border-t border-border bg-background">
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-20 [mask-image:radial-gradient(70%_70%_at_50%_0%,black,transparent)]" />
+      <Container className="relative grid gap-10 py-14 md:grid-cols-12">
         <div className="md:col-span-5">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-surface text-sm font-semibold">
