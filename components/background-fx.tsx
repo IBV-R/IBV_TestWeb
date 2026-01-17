@@ -1,8 +1,11 @@
 import { cn } from "@/lib/cn";
 
+import { AuroraCanvas } from "./aurora-canvas";
+
 export function BackgroundFX({ className }: { className?: string }) {
   return (
     <>
+      <AuroraCanvas />
       <div
         aria-hidden="true"
         className={cn(

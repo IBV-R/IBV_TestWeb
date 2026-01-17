@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
 import Link from "next/link";
 
@@ -30,6 +30,7 @@ export function Button({
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  children?: ReactNode;
 }) {
   return (
     <button
@@ -59,6 +60,7 @@ export function ButtonLink({
   href: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  children?: ReactNode;
 }) {
   return (
     <Link

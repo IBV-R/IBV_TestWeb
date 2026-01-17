@@ -42,6 +42,8 @@ export const additionalLinks = [
   { href: "/startups", label: "For Startups" },
   { href: "/investors", label: "For Investors" },
   { href: "/i2a", label: "I2A Launchpad" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/privacy", label: "Privacy" },
 ] as const;
 
 export const footerLinks = [...navLinks, ...additionalLinks] as const;
